@@ -1,0 +1,1 @@
+Approximation of bar charts, scatter plots, etc
