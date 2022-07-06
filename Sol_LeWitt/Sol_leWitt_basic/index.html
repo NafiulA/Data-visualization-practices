@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sol LeWitt Reproduction</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const svg = document.createElementNS(
+            'http://www.w3.org/2000/svg',
+            'svg'
+        );
+        svg.setAttribute('width', width);
+        svg.setAttribute('height', height);
+        document.body.appendChild(svg);
+
+        const mask = document.createElementNS(
+            'http://www.w3.org/2000/svg',
+            'mask'
+        );
+        mask.setAttribute('id', "circle-mask");
+        svg.appendChild(mask);
+
+        const maskRect = document.createElementNS(
+            'http://www.w3.org/2000/svg',
+            'rect'
+        );
+        maskRect.setAttribute('width', width);
+        maskRect.setAttribute('height', height);
+        maskRect.setAttribute('fill', 'black');
+        mask.appendChild(maskRect);
+
+        const circleMask = document.createElementNS(
+            'http://www.w3.org/2000/svg',
+            'circle'
+        );
+        circleMask.setAttribute('cx', width / 2);
+        circleMask.setAttribute('cy', height / 2);
+        circleMask.setAttribute('r', height / 2);
+        circleMask.setAttribute('fill', 'white');
+        mask.appendChild(circleMask);
+
+        const mask2 = document.createElementNS(
+            'http://www.w3.org/2000/svg',
+            'mask'
+        );
+        mask2.setAttribute('id', "circle-mask-2");
+        svg.appendChild(mask2);
+
+        const maskRect2 = document.createElementNS(
+            'http://www.w3.org/2000/svg',
+            'rect'
+        );
+        maskRect2.setAttribute('width', width);
+        maskRect2.setAttribute('height', height);
+        maskRect2.setAttribute('fill', 'white');
+        mask2.appendChild(maskRect2);
+
+        const circle2 = document.createElementNS(
+            'http://www.w3.org/2000/svg',
+            'circle'
+        );
+        circle2.setAttribute('cx', width / 2);
+        circle2.setAttribute('cy', height / 2);
+        circle2.setAttribute('r', height / 2);
+        circle2.setAttribute('fill', 'black');
+        mask2.appendChild(circle2);
+
+        // const mask3 = document.createElementNS(
+        //     'http://www.w3.org/2000/svg',
+        //     'mask'
+        // );
+        // mask3.setAttribute('id', "triangle-mask");
+        // svg.appendChild(mask3);
+
+        // const maskRect3 = document.createElementNS(
+        //     'http://www.w3.org/2000/svg',
+        //     'rect'
+        // );
+        // maskRect3.setAttribute('width', width);
+        // maskRect3.setAttribute('height', height);
+        // maskRect3.setAttribute('fill', 'white');
+        // mask3.appendChild(maskRect3);
+
+        // const triangle = document.createElementNS(
+        //     'http://www.w3.org/2000/svg',
+        //     'polygon'
+        // );
+        // triangle.setAttribute('points', "250,60 100,400 400,400");
+        // triangle.setAttribute('fill', 'black');
+        // mask3.appendChild(triangle);
+
+        // const mask4 = document.createElementNS(
+        //     'http://www.w3.org/2000/svg',
+        //     'mask'
+        // );
+        // mask4.setAttribute('id', "triangle-mask-2");
+        // svg.appendChild(mask4);
+
+        // const maskRect4 = document.createElementNS(
+        //     'http://www.w3.org/2000/svg',
+        //     'rect'
+        // );
+        // maskRect4.setAttribute('width', width);
+        // maskRect4.setAttribute('height', height);
+        // maskRect4.setAttribute('fill', 'black');
+        // mask4.appendChild(maskRect4);
+
+        // const triangle2 = document.createElementNS(
+        //     'http://www.w3.org/2000/svg',
+        //     'polygon'
+        // );
+        // triangle2.setAttribute('points', "250,60 100,400 400,400");
+        // triangle2.setAttribute('fill', 'white');
+        // mask4.appendChild(triangle2);
+
+        // for (let i = 0; i < height / 2; i++) {
+        //     const circle = document.createElementNS(
+        //         'http://www.w3.org/2000/svg',
+        //         'circle'
+        //     );
+        //     circle.setAttribute('r', i * 10);
+        //     circle.setAttribute('cx', width / 2);
+        //     circle.setAttribute('cy', height / 2);
+        //     circle.setAttribute('fill', "none");
+        //     circle.setAttribute('stroke', "black");
+        //     circle.setAttribute('stroke-width', "5");
+        //     circle.classList.add("circleEven");
+
+        //     circle.setAttribute('mask', 'url(#circle-mask)');
+        //     svg.appendChild(circle);
+        // };
+
+        for (let i = 0; i < height / 2; i++) {
+            const circle = document.createElementNS(
+                'http://www.w3.org/2000/svg',
+                'circle'
+            );
+            circle.setAttribute('r', i * 10);
+            circle.setAttribute('cx', width / 2);
+            circle.setAttribute('cy', height / 2);
+            circle.setAttribute('fill', "none");
+            circle.setAttribute('stroke', "black");
+            circle.setAttribute('stroke-width', "5");
+
+            circle.setAttribute('mask', 'url(#circle-mask-2)');
+            svg.appendChild(circle);
+        };
+
+        for (let i = 0; i < width; i++) {
+            const rect = document.createElementNS(
+                'http://www.w3.org/2000/svg',
+                'rect'
+            );
+            rect.setAttribute('x', i * 20);
+            rect.setAttribute('width', 10);
+            rect.setAttribute('height', height);
+            rect.setAttribute('mask', 'url(#circle-mask)');
+            svg.appendChild(rect);
+        };
+
+    </script>
+</body>
+
+</html>
